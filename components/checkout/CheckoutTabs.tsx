@@ -1,9 +1,29 @@
 "use client";
 
-import { tabs } from "@/data/constants";
 import { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsHouse } from "react-icons/bs";
+import ShoppingCart from "./ShoppingCart";
+import SecureCheckout from "./SecureCheckout";
+import OrderComplete from "./OrderComplete";
+
+const tabs = [
+  {
+    id: "cart",
+    label: "Shopping Cart",
+    component: <ShoppingCart />,
+  },
+  {
+    id: "checkout",
+    label: "Secure Checkout",
+    component: <SecureCheckout />,
+  },
+  {
+    id: "complete",
+    label: "Order Complete",
+    component: <OrderComplete />,
+  },
+];
 
 export default function CheckoutTabs() {
   const [activeTab, setActiveTab] = useState("cart");

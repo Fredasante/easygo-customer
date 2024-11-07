@@ -17,7 +17,7 @@ const RegisterForm = () => {
       <Card className="">
         <CardHeader>
           <CardTitle className="text-xl md:text-2xl mb-2">
-            Let's get you started
+            Let&apos;s get you started
           </CardTitle>
           <CardDescription>Begin by creating an account</CardDescription>
         </CardHeader>
@@ -56,9 +56,9 @@ const RegisterForm = () => {
         </CardContent>
         <CardFooter className="text-xs text-gray-500 max-w-[280px] mx-auto text-center">
           <p>
-            By Clicking "Sign up" you agree to Nani's{" "}
+            By Clicking &quot;Sign up&quot; you agree to Nani&apos;s
             <Link href="/" className="text-secondaryBrown font-semibold">
-              Terms and privacy policy
+              &nbsp;Terms and privacy policy
             </Link>
           </p>
         </CardFooter>

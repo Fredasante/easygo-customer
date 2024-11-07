@@ -46,7 +46,7 @@ const PaginationComponent: React.FC<CategoryPaginationProps> = ({
 
   const renderPageNumbers = () => {
     const maxVisiblePages = 6;
-    let pages = [];
+    const pages = [];
 
     if (totalPages <= maxVisiblePages) {
       for (let i = 1; i <= totalPages; i++) {

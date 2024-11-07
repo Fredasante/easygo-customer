@@ -59,7 +59,7 @@ const LoginForm = () => {
         </CardContent>
         <CardFooter className="text-xs text-muted-foreground flex items-center justify-center">
           <p className="mt-2">
-            Don't have an account?{" "}
+            Don&apos;t have an account?&nbsp;
             <Link
               href="/register"
               className="text-secondaryBrown font-semibold"

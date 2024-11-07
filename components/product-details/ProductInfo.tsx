@@ -3,7 +3,7 @@ import { Separator } from "../ui/separator";
 const ProductInfo: React.FC = () => (
   <div>
     <h1 className="text-xl md:text-2xl font-bold mb-2 break-words">
-      Xiaomi Redmi 10 - 6.5", Android 11, Camera(50+8+2+2 MP/8MP), 128GB HDD -
+      Xiaomi Redmi 10 - 6.5, Android 11, Camera(50+8+2+2 MP/8MP), 128GB HDD -
       4GB RAM, 5000mAh - Sea Blue
     </h1>
     <Separator className="mt-5" />

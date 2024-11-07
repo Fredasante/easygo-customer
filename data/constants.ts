@@ -1,10 +1,6 @@
 import React from "react";
 import { FaRegHeart, FaRegUser } from "react-icons/fa";
 import { FiShoppingCart } from "react-icons/fi";
-import ShoppingCart from "@/components/checkout/ShoppingCart";
-import SecureCheckout from "@/components/checkout/SecureCheckout";
-import OrderComplete from "@/components/checkout/OrderComplete";
-import { ReactNode } from "react";
 
 interface MenuItem {
   href: string;
@@ -54,23 +50,4 @@ export const categories = [
   "Wearable Technology",
   "Home Entertainment",
   "Accessories",
-];
-
-// Define and export the tabs array with the TabItem type
-export const tabs = [
-  {
-    id: "cart",
-    label: "Shopping Cart",
-    component: React.createElement(ShoppingCart),
-  },
-  {
-    id: "checkout",
-    label: "Secure Checkout",
-    component: React.createElement(SecureCheckout),
-  },
-  {
-    id: "complete",
-    label: "Order Complete",
-    component: React.createElement(OrderComplete),
-  },
 ];

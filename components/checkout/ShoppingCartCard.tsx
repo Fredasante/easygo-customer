@@ -24,7 +24,7 @@ const ShoppingCartCard = () => {
         <div>
           <div>
             <h3 className="text-sm font-medium break-words">
-              Xiaomi Redmi 10 - 6.5",Android 11, Camera( 50+8+2+2 MP/8MP), 128GB
+              Xiaomi Redmi 10 - 6.5,Android 11, Camera( 50+8+2+2 MP/8MP), 128GB
               HDD - 4GB RAM, 5000mAh - Sea Blue
             </h3>
           </div>

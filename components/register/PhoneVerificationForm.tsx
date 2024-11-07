@@ -15,7 +15,7 @@ const PhoneVerificationForm = () => {
       <Card className="">
         <CardHeader>
           <CardTitle className="text-xl md:text-2xl mb-2">
-            Verify you're real
+            Verify you&apos;re real
           </CardTitle>
           <CardDescription>
             Enter the mobile number to receive an SMS verification code
