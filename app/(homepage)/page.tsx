@@ -5,7 +5,7 @@ import ProductDiscount from "@/components/homepage/ProductDiscount";
 
 export default function Home() {
   return (
-    <div>
+    <div className="max-w-screen-xl mx-auto">
       <ProductCategoryCheckbox />
       <FeaturedProductsList />
       <ProductDiscount />

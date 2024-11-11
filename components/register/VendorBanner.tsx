@@ -9,7 +9,7 @@ import Image from "next/image";
 
 const VendorBanner = () => {
   return (
-    <section className="bg-primaryBrown mt-10">
+    <section className="bg-primaryBrown pt-2">
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row p-5">
         <div className="w-full md:w-auto">
           <Image

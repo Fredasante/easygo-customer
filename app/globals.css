@@ -8,6 +8,7 @@ body {
 
 @layer base {
   :root {
+    --primaryVar: #c0c78c;
     --background: 0 0% 100%;
     --foreground: 222.2 84% 4.9%;
     --card: 0 0% 100%;
@@ -49,12 +50,14 @@ body {
 }
 
 /* global styles */
-.input:focus {
+.input:focus,
+select:focus,
+textarea:focus {
   box-shadow: none !important;
   outline: none !important;
 }
 
-/* custom-phone-input.css */
+/* custom-phone-input*/
 .custom-phone-input .PhoneInput {
   display: flex;
   align-items: center;
@@ -84,4 +87,8 @@ body {
 
 .custom-phone-input .PhoneInputCountryIcon {
   margin-right: 0.25rem;
+}
+
+input[type="radio"] {
+  accent-color: rgb(113, 147, 33);
 }

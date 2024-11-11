@@ -11,7 +11,7 @@ import CountrySelect from "./CountrySelect";
 
 const PhoneVerificationForm = () => {
   return (
-    <div className="max-w-md mx-auto mt-10 lg:mt-16 px-4">
+    <div className="max-w-md mx-auto my-10 lg:my-14 px-4">
       <Card className="">
         <CardHeader>
           <CardTitle className="text-xl md:text-2xl mb-2">

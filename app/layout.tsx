@@ -24,9 +24,7 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${outfit.variable} antialiased`}>
         <Header />
-        <div className="flex flex-col max-w-screen-xl mx-auto xl:px-4">
-          {children}
-        </div>
+        {children}
         <VendorBanner />
         <Footer />
       </body>

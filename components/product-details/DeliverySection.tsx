@@ -2,8 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Button } from "../ui/button";
 import { Separator } from "../ui/separator";
-import { FaPlus } from "react-icons/fa6";
-import { FaMinus } from "react-icons/fa6";
+import { FaPlus, FaMinus } from "react-icons/fa6";
 import ActionButtons from "./ActionButtons";
 
 const DeliverySection = () => {

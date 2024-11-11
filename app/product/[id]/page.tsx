@@ -10,7 +10,7 @@ import ProductCard from "@/components/homepage/ProductCard";
 
 const ProductDetailsPage = () => {
   return (
-    <div className="max-w-7xl mx-auto p-5 md:p-7 overflow-hidden">
+    <div className="max-w-screen-xl mx-auto p-5 md:p-7 overflow-hidden">
       <div className="flex flex-col lg:flex-row gap-5 md:gap-10 w-full">
         <div className="w-full lg:w-[75%] flex flex-col md:flex-row">
           <div className="md:w-2/3 w-full h-full">

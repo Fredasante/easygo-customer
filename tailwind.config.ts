@@ -13,6 +13,7 @@ const config: Config = {
         brandSecondary: "#475467",
         brandDisabled: "#A1B3C2",
         brandSecondaryBg: "#F8F4F1",
+        brandYellow: "#C0C78C",
         secondaryBg: "#FAFBFC",
         primaryYellow: "#FEFAE0",
         secondaryYellow: "#F6C745",
