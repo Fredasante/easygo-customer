@@ -19,7 +19,7 @@ const ProductCategoryCheckbox = () => {
             id={`category-${index}`}
             checked={selectedCategory === category}
             onChange={() => handleCheckboxChange(category)}
-            className="appearance-none w-7 h-7 bg-white rounded-full checked:bg-secondaryGreen checked:border-secondaryGreen focus:outline-none
+            className="flex-shrink-0 appearance-none w-7 h-7 bg-white rounded-full checked:bg-secondaryGreen checked:border-secondaryGreen focus:outline-none
                         relative checked:after:content-['✔'] checked:after:text-white checked:after:absolute checked:after:inset-0 checked:after:flex checked:after:items-center checked:after:justify-center"
           />
           <label
