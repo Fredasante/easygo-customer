@@ -11,7 +11,7 @@ const ProductCategoryCheckbox = () => {
   };
 
   return (
-    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-8 mx-4 lg:mx-0 p-5 lg:p-10 bg-[#ECEEDD] rounded-3xl mt-10">
+    <section className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-5 lg:gap-8 lg:mx-0 p-5 lg:p-10 bg-[#ECEEDD] rounded-3xl mt-7 md:mt-10">
       {productsCategoryList.map((category, index) => (
         <div key={index} className="flex items-center space-x-2">
           <input
