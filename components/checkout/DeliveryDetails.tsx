@@ -69,7 +69,7 @@ const DeliveryDetails = () => {
             </label>
           </div>
           <div className="flex justify-end gap-5 mb-3">
-            <Button className="px-6" variant="outline">
+            <Button type="button" className="px-6" variant="outline">
               Cancel
             </Button>
             <Button variant="yellow">Add Address</Button>
