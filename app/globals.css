@@ -45,7 +45,7 @@ body {
     @apply bg-background text-foreground;
   }
   input {
-    @apply !border-gray-200;
+    @apply !border-gray-300;
   }
 }
 
