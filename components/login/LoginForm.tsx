@@ -25,14 +25,19 @@ import { loginFormSchema } from "@/schemas";
 import { z } from "zod";
 import { Eye, EyeOff } from "lucide-react";
 import { useState } from "react";
-import { LoginPayload } from "@/repositories/auth-repository";
-// import DI from "@/di-container";
+import DI from "@/di-container";
 import { ClipLoader } from "react-spinners";
-// import { useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { ApiError } from "@/types";
+import { toast } from "sonner";
+import { useDispatch } from "react-redux";
+import { saveLoginResponse } from "@/store/auth-reducer";
 
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
+  const router = useRouter();
+  const dispatch = useDispatch();
 
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
@@ -43,18 +48,23 @@ const LoginForm = () => {
     mode: "onChange",
   });
 
-  const handleLoginSubmit = async (data: LoginPayload) => {
+  const handleLoginSubmit = async (data: z.infer<typeof loginFormSchema>) => {
     setLoading(true);
-    console.log(data);
-
-    // try {
-    //   await DI.authService.login(data);
-
-    //   router.push("/");
-    // } catch (error) {
-    // } finally {
-    //   setLoading(false);
-    // }
+    try {
+      const res = await DI.authService.login(data);
+      console.log(res);
+      dispatch(saveLoginResponse(res.data));
+      console.log(res.data);
+      router.push("/");
+    } catch (error: unknown) {
+      const apiError = error as ApiError;
+      const message =
+        apiError.response?.data?.message ??
+        "An unexpected error occurred. Please try again.";
+      toast.error(message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -112,7 +122,7 @@ const LoginForm = () => {
                         <FormMessage />
                       </FormItem>
                     )}
-                  />{" "}
+                  />
                 </div>
                 <div>
                   <Button

@@ -54,14 +54,10 @@ export interface LoginPayload {
 }
 
 export interface LoginResponse {
-  message: string;
-  code: string;
-  data: {
-    user: User;
-    resend_otp_token: string | null;
-    token: string;
-    willVerifyMFACode: boolean;
-  };
+  user: User;
+  resend_otp_token: string | null;
+  token: string;
+  willVerifyMFACode: boolean;
 }
 
 export default class AuthRepository {

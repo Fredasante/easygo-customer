@@ -14,12 +14,12 @@ export const menuItems: MenuItem[] = [
     label: "Wishlist",
     icon: React.createElement(FaRegHeart),
   },
+  { href: "/cart", label: "Cart", icon: React.createElement(FiShoppingCart) },
   {
     href: "/auth/login",
     label: "Sign/Register",
     icon: React.createElement(FaRegUser),
   },
-  { href: "/cart", label: "Cart", icon: React.createElement(FiShoppingCart) },
 ];
 
 export const productsCategoryList = [
