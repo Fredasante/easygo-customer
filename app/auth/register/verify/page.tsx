@@ -16,7 +16,7 @@ import { FaTimesCircle } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
 import { ApiError } from "@/types";
 
-const VerifyEmailPage = () => {
+const VerifyEmailContent = () => {
   const router = useRouter();
   const searchParams = useSearchParams();
   const [isVerifying, setIsVerifying] = useState(true);
@@ -62,71 +62,77 @@ const VerifyEmailPage = () => {
 
   return (
     <div className="max-w-sm mx-auto my-10 lg:my-14 text-center">
-      <Suspense fallback={<ClipLoader size={20} color="#E5A864" />}>
-        {isVerifying ? (
-          <div className="my-10 lg:my-[120px]">
-            <p className="my-5">Verifying your email. Please wait</p>
-            <ClipLoader size={20} color="#E5A864" />
-          </div>
-        ) : verificationStatus === "success" ? (
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-green-700 text-lg flex items-center flex-col gap-5">
-                  Email Verified Successfully
-                  <IoIosCheckmarkCircle size={55} className="text-green-700" />
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
+      {isVerifying ? (
+        <div className="my-10 lg:my-[120px]">
+          <p className="my-5">Verifying your email. Please wait</p>
+          <ClipLoader size={20} color="#E5A864" />
+        </div>
+      ) : verificationStatus === "success" ? (
+        <div>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-green-700 text-lg flex items-center flex-col gap-5">
+                Email Verified Successfully
+                <IoIosCheckmarkCircle size={55} className="text-green-700" />
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <p className="text-gray-600 text-sm">
+                <br />
+                You can now login to your account.
+              </p>
+            </CardContent>
+            <CardFooter className="w-full">
+              <Button
+                onClick={() => router.push("/auth/login")}
+                className="mt-4 w-full"
+                variant="orange"
+              >
+                Login
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+      ) : (
+        <div>
+          <Card>
+            <CardHeader>
+              <CardTitle className="text-brandRed text-lg">
+                Failed to Verify Email
+              </CardTitle>
+            </CardHeader>
+            <CardContent>
+              <div className="flex items-center justify-center mb-5">
+                <FaTimesCircle size={55} className="text-brandRed" />
+              </div>
+              {verificationStatus === "error" && (
                 <p className="text-gray-600 text-sm">
-                  <br />
-                  You can now login to your account.
+                  We were unable to verify your email.{" "}
+                  {errorMessage || "The link may be invalid or expired."}
                 </p>
-              </CardContent>
-              <CardFooter className="w-full">
-                <Button
-                  onClick={() => router.push("/auth/login")}
-                  className="mt-4 w-full"
-                  variant="orange"
-                >
-                  Login
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-        ) : (
-          <div>
-            <Card>
-              <CardHeader>
-                <CardTitle className="text-brandRed text-lg">
-                  Failed to Verify Email
-                </CardTitle>
-              </CardHeader>
-              <CardContent>
-                <div className="flex items-center justify-center mb-5">
-                  <FaTimesCircle size={55} className="text-brandRed" />
-                </div>
-                {verificationStatus === "error" && (
-                  <p className="text-gray-600 text-sm">
-                    We were unable to verify your email.{" "}
-                    {errorMessage || "The link may be invalid or expired."}
-                  </p>
-                )}
-              </CardContent>
-              <CardFooter className="w-full">
-                <Button
-                  onClick={() => router.push("/auth/register")}
-                  className="mt-4 w-full"
-                  variant="orange"
-                >
-                  Try Again
-                </Button>
-              </CardFooter>
-            </Card>
-          </div>
-        )}
-      </Suspense>
+              )}
+            </CardContent>
+            <CardFooter className="w-full">
+              <Button
+                onClick={() => router.push("/auth/register")}
+                className="mt-4 w-full"
+                variant="orange"
+              >
+                Try Again
+              </Button>
+            </CardFooter>
+          </Card>
+        </div>
+      )}
     </div>
+  );
+};
+
+const VerifyEmailPage = () => {
+  return (
+    <Suspense fallback={<ClipLoader size={20} color="#E5A864" />}>
+      <VerifyEmailContent />
+    </Suspense>
   );
 };
 
