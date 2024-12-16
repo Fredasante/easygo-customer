@@ -3,7 +3,7 @@ import { Card, CardContent, CardFooter } from "../ui/card";
 import Image from "next/image";
 import { MdAddShoppingCart } from "react-icons/md";
 import Link from "next/link";
-import { Product } from "@/types/product";
+import { Product } from "@/types";
 
 const ProductCard: React.FC<{ product: Product }> = ({ product }) => {
   return (
