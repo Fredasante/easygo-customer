@@ -2,7 +2,7 @@ import PaymentMethod from "../checkout/PaymentMethod";
 import ContactCard from "./ContactCard";
 import DeliveryAddressInfo from "./DeliveryAddressInfo";
 
-const AccountTab = () => {
+const AccountSection = () => {
   return (
     <div className="my-5 max-w-6xl mx-auto px-4">
       <div className="border p-5 shadow-sm w-full rounded-lg">
@@ -15,4 +15,4 @@ const AccountTab = () => {
   );
 };
 
-export default AccountTab;
+export default AccountSection;

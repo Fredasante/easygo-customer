@@ -15,7 +15,7 @@ export const menuItems: MenuItem[] = [
     icon: React.createElement(FaRegHeart),
   },
   {
-    href: "/login",
+    href: "/auth/login",
     label: "Sign/Register",
     icon: React.createElement(FaRegUser),
   },

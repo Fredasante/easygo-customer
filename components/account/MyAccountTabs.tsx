@@ -3,25 +3,25 @@
 import { useState } from "react";
 import { IoIosArrowForward } from "react-icons/io";
 import { BsHouse } from "react-icons/bs";
-import AccountTab from "./AccountTab";
-import OrdersTab from "./OrdersTab";
 import AccountSidebar from "./AccountSidebar";
+import AccountSection from "./AccountSection";
+import OrdersSection from "../orders/OrdersSection";
 
 const tabs = [
   {
-    id: "cart",
+    id: "account",
     label: "My Account",
-    component: <AccountTab />,
+    component: <AccountSection />,
   },
   {
-    id: "checkout",
+    id: "orders",
     label: "My Orders",
-    component: <OrdersTab />,
+    component: <OrdersSection />,
   },
 ];
 
 export default function MyAccountTabs() {
-  const [activeTab, setActiveTab] = useState("cart");
+  const [activeTab, setActiveTab] = useState("account");
   const [selectedOption, setSelectedOption] = useState("My Account");
 
   const handleTabChange = (tabId: string, label: string = "My Account") => {
@@ -31,7 +31,6 @@ export default function MyAccountTabs() {
 
   return (
     <div className="flex">
-      {/* Main Content */}
       <div className="w-full py-7 max-w-6xl mx-auto">
         {/* Tabs Navigation */}
         <div className="flex gap-3 items-center px-2">
@@ -54,7 +53,8 @@ export default function MyAccountTabs() {
           ))}
         </div>
 
-        <div className="flex flex-col md:flex-row gap-7">
+        <div className="flex flex-col md:flex-row gap-5">
+          {/* Sidebar */}
           <AccountSidebar
             selectedOption={selectedOption}
             setSelectedOption={handleTabChange}

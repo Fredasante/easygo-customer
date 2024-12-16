@@ -10,12 +10,17 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        brandOrange: "#E29F53",
+        brandGold: "#FBB15C",
+        brandRed: "#EF483F",
+        brandLightOrange: "#FEE8CE",
         brandSecondary: "#475467",
         brandDisabled: "#A1B3C2",
         brandSecondaryBg: "#F8F4F1",
         brandYellow: "#C0C78C",
         secondaryBg: "#FAFBFC",
         primaryYellow: "#FEFAE0",
+        lightYellow: "#F2F4E8",
         secondaryYellow: "#F6C745",
         primaryGreen: "#A6B37D",
         secondaryGreen: "#9A9F70",

@@ -13,15 +13,15 @@ const VendorBanner = () => {
       <div className="max-w-4xl mx-auto flex flex-col md:flex-row p-5">
         <div className="w-full md:w-auto">
           <Image
-            src="/images/new-entries-image.png"
+            src="/images/shop-now.png"
             width={500}
             height={500}
-            alt="Discount banner"
+            alt="Shop Now Image"
             className="md:rounded-s-lg"
           />
         </div>
 
-        <div className="bg-secondaryGreen w-full flex flex-col justify-center p-1 md:rounded-e-lg">
+        <div className="bg-brandRed w-full flex flex-col justify-center p-1 md:rounded-e-lg">
           <CardHeader>
             <CardTitle className="text-xl md:text-2xl text-white mb-3">
               Enjoy unbeatable discounts and great collection of products
@@ -34,7 +34,7 @@ const VendorBanner = () => {
             </CardDescription>
           </CardHeader>
           <CardContent>
-            <Button variant="brown" size="lg" className="font-semibold">
+            <Button variant="gold" size="lg" className="font-semibold">
               SIGN UP AS A VENDOR
             </Button>
           </CardContent>

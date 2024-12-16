@@ -15,14 +15,14 @@ const AccountSidebar: React.FC<AccountSidebarProps> = ({
   setSelectedOption,
 }) => {
   const accountOptions = [
-    { label: "My Account", icon: <FaRegCircleUser />, tab: "cart" },
-    { label: "My Orders", icon: <LuClipboardList />, tab: "checkout" },
+    { label: "My Account", icon: <FaRegCircleUser />, tab: "account" },
+    { label: "My Orders", icon: <LuClipboardList />, tab: "orders" },
     { label: "Wish List", icon: <FaRegHeart />, tab: null },
     { label: "Reviews", icon: <FaRegStar />, tab: null },
   ];
 
   return (
-    <aside className="w-full md:w-[45%] my-5 bg-gray-50 h-fit p-5 text-gray-700 rounded-lg shadow-sm">
+    <aside className="w-full lg:w-[30%] my-5 bg-gray-50 h-fit p-5 text-gray-700 rounded-lg shadow-sm">
       <div className="mb-8">
         <h2 className="text-sm font-semibold mb-4 text-gray-800">ACCOUNT</h2>
         <Separator className="mt-3 mb-5" />
@@ -37,7 +37,7 @@ const AccountSidebar: React.FC<AccountSidebarProps> = ({
                   setSelectedOption(option.label);
                 }
               }}
-              className={`flex items-center cursor-pointer mb-5 ${
+              className={`flex items-center cursor-pointer mb-5 whitespace-nowrap ${
                 selectedOption === option.label
                   ? "font-semibold !text-secondaryGreen transition duration-300"
                   : "text-gray-600"

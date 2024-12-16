@@ -1,3 +1,4 @@
+// import RegisterFlow from "@/components/register/RegisterFlow";
 import RegisterForm from "@/components/register/RegisterForm";
 
 const RegisterPage = () => {

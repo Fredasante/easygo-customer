@@ -1,3 +1,5 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import {
   Card,
@@ -9,7 +11,7 @@ import {
 import { Label } from "../ui/label";
 import CountrySelect from "./CountrySelect";
 
-const PhoneVerificationForm = () => {
+const PhoneVerificationForm = ({ onNextStep }: { onNextStep: () => void }) => {
   return (
     <div className="max-w-md mx-auto my-10 lg:my-14 px-4">
       <Card className="">
