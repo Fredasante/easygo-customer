@@ -26,10 +26,10 @@ import {
 } from "@/components/ui/form";
 import { registerFormSchema } from "@/schemas";
 import { Eye, EyeOff } from "lucide-react";
-import { RegisterPayload } from "@/repositories/auth-repository";
 import { toast } from "sonner";
 import DI from "@/di-container";
 import { ClipLoader } from "react-spinners";
+import { ApiError } from "@/types";
 
 const RegisterForm = () => {
   const [showPassword, setShowPassword] = useState(false);
@@ -52,13 +52,13 @@ const RegisterForm = () => {
     data: z.infer<typeof registerFormSchema>
   ) => {
     const { confirmPassword, ...rest } = data;
+    if (!confirmPassword) return;
 
     const payload = {
       ...rest,
       phone: null,
       username: null,
     };
-
     setLoading(true);
 
     try {
@@ -67,13 +67,10 @@ const RegisterForm = () => {
         "Account created successfully. Check your email for verification."
       );
     } catch (error: unknown) {
+      const apiError = error as ApiError;
       const message =
-        error instanceof Error &&
-        "response" in error &&
-        (error as any).response?.data?.message
-          ? (error as any).response.data.message
-          : "An unexpected error occurred. Please try again.";
-
+        apiError.response?.data?.message ??
+        "An unexpected error occurred. Please try again.";
       toast.error(message);
     } finally {
       setLoading(false);

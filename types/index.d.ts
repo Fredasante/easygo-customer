@@ -14,3 +14,11 @@ export interface Product {
   sold: number;
   image: string;
 }
+
+export interface ApiError {
+  response?: {
+    data?: {
+      message?: string;
+    };
+  };
+}

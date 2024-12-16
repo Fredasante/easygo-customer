@@ -32,7 +32,7 @@ const tabs = [
 export default function OrderTabs() {
   const [activeTab, setActiveTab] = useState("all-orders");
 
-  const handleTabChange = (tabId: string, _label: string = "My Account") => {
+  const handleTabChange = (tabId: string) => {
     setActiveTab(tabId);
   };
 
@@ -52,7 +52,7 @@ export default function OrderTabs() {
             >
               <button
                 className="transition-colors duration-300"
-                onClick={() => handleTabChange(tab.id, tab.label)}
+                onClick={() => handleTabChange(tab.id)}
               >
                 {tab.label}
               </button>

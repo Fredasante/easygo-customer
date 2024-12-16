@@ -14,6 +14,7 @@ import {
 import { IoIosCheckmarkCircle } from "react-icons/io";
 import { FaTimesCircle } from "react-icons/fa";
 import { ClipLoader } from "react-spinners";
+import { ApiError } from "@/types";
 
 const VerifyEmailPage = () => {
   const router = useRouter();
@@ -42,14 +43,13 @@ const VerifyEmailPage = () => {
       } catch (error: unknown) {
         let message = "An unexpected error occurred during email verification.";
 
-        if (
-          error instanceof Error &&
-          "response" in error &&
-          (error as any).response?.data?.message
-        ) {
-          message = (error as any).response.data.message;
-        }
+        if (error instanceof Error) {
+          const apiError = error as ApiError;
 
+          if (apiError.response?.data?.message) {
+            message = apiError.response.data.message;
+          }
+        }
         setErrorMessage(message);
         setVerificationStatus("error");
       } finally {
