@@ -33,7 +33,6 @@ import { useRouter } from "next/navigation";
 const LoginForm = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
-  const router = useRouter();
 
   const form = useForm<z.infer<typeof loginFormSchema>>({
     resolver: zodResolver(loginFormSchema),
@@ -46,15 +45,16 @@ const LoginForm = () => {
 
   const handleLoginSubmit = async (data: LoginPayload) => {
     setLoading(true);
+    console.log(data);
 
-    try {
-      await DI.authService.login(data);
+    // try {
+    //   await DI.authService.login(data);
 
-      router.push("/");
-    } catch (error) {
-    } finally {
-      setLoading(false);
-    }
+    //   router.push("/");
+    // } catch (error) {
+    // } finally {
+    //   setLoading(false);
+    // }
   };
 
   return (

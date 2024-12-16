@@ -32,7 +32,7 @@ const tabs = [
 export default function OrderTabs() {
   const [activeTab, setActiveTab] = useState("all-orders");
 
-  const handleTabChange = (tabId: string, label: string = "My Account") => {
+  const handleTabChange = (tabId: string, _label: string = "My Account") => {
     setActiveTab(tabId);
   };
 

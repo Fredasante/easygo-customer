@@ -1,5 +1,4 @@
 import React from "react";
-import OrderTabs from "./OrderTabs";
 import OrderDetails from "./OrderDetails";
 
 const OrdersSection = () => {

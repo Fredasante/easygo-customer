@@ -28,7 +28,6 @@ import { registerFormSchema } from "@/schemas";
 import { Eye, EyeOff } from "lucide-react";
 import { RegisterPayload } from "@/repositories/auth-repository";
 import { toast } from "sonner";
-import { useDispatch } from "react-redux";
 import DI from "@/di-container";
 import { ClipLoader } from "react-spinners";
 
@@ -50,18 +49,16 @@ const RegisterForm = () => {
   });
 
   const handleRegisterSubmit = async (
-    data: RegisterPayload & { confirmPassword: string }
+    data: z.infer<typeof registerFormSchema>
   ) => {
     const { confirmPassword, ...rest } = data;
 
     const payload = {
-      firstname: rest.firstname,
-      lastname: rest.lastname || null,
-      email: rest.email,
-      password: rest.password,
-      username: null,
+      ...rest,
       phone: null,
+      username: null,
     };
+
     setLoading(true);
 
     try {
@@ -69,11 +66,15 @@ const RegisterForm = () => {
       toast.success(
         "Account created successfully. Check your email for verification."
       );
-    } catch (error: any) {
-      toast.error(
-        error?.response?.data?.message ||
-          "An unexpected error occurred. Please try again."
-      );
+    } catch (error: unknown) {
+      const message =
+        error instanceof Error &&
+        "response" in error &&
+        (error as any).response?.data?.message
+          ? (error as any).response.data.message
+          : "An unexpected error occurred. Please try again.";
+
+      toast.error(message);
     } finally {
       setLoading(false);
     }

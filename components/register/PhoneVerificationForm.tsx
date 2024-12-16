@@ -11,7 +11,7 @@ import {
 import { Label } from "../ui/label";
 import CountrySelect from "./CountrySelect";
 
-const PhoneVerificationForm = ({ onNextStep }: { onNextStep: () => void }) => {
+const PhoneVerificationForm = () => {
   return (
     <div className="max-w-md mx-auto my-10 lg:my-14 px-4">
       <Card className="">

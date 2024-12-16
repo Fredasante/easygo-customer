@@ -39,10 +39,17 @@ const VerifyEmailPage = () => {
         await DI.authService.verifyEmail({ user_id, code });
 
         setVerificationStatus("success");
-      } catch (error: any) {
-        const message =
-          error.response?.data?.message ||
-          "An unexpected error occurred during email verification.";
+      } catch (error: unknown) {
+        let message = "An unexpected error occurred during email verification.";
+
+        if (
+          error instanceof Error &&
+          "response" in error &&
+          (error as any).response?.data?.message
+        ) {
+          message = (error as any).response.data.message;
+        }
+
         setErrorMessage(message);
         setVerificationStatus("error");
       } finally {
