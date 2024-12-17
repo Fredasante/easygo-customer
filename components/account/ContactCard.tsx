@@ -4,7 +4,7 @@ import { Button } from "../ui/button";
 
 const ContactCard = () => {
   return (
-    <div className="p-4 mx-auto bg-[#F2F4E8] rounded-lg shadow-sm mb-5 flex justify-between">
+    <div className="p-4 mx-auto bg-brandLightOrange rounded-lg shadow-sm mb-5 flex justify-between">
       <div>
         <h2 className="text-lg font-semibold text-gray-900 mt-1">
           Ben-Aaron Mills-Pappoe

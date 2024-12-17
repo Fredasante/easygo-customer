@@ -52,5 +52,7 @@ const authSlice = createSlice({
 });
 
 export const { saveUserProfile, saveLoginResponse, logout } = authSlice.actions;
+export const authActions = authSlice.actions;
+export type AuthActions = typeof authSlice.actions;
 
 export default authSlice.reducer;

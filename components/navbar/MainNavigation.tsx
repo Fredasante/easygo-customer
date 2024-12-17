@@ -13,8 +13,7 @@ import {
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
 import { Button } from "@/components/ui/button";
-import { User, Settings, Building, Heart } from "lucide-react";
-import { IoHomeOutline } from "react-icons/io5";
+import { User, Building, Heart } from "lucide-react";
 
 import { menuItems } from "@/data/constants";
 import Link from "next/link";

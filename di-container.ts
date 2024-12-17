@@ -2,8 +2,8 @@ import axios from "axios";
 import { AxiosClient } from "./utils/client";
 import AuthService from "./services/auth-service";
 import { store } from "./store";
-import { authActions } from "./store/auth-reducer";
 import { default as AuthRepo } from "./repositories/auth-repository";
+import { authActions } from "./store/auth-reducer";
 
 // client
 const client = new AxiosClient(axios);

@@ -9,7 +9,7 @@ const StepIcon = ({
 }) => (
   <div
     className={`p-2 rounded-lg relative z-10 text-brandSecondary ${
-      isCompleted ? "bg-brandYellow" : "bg-gray-50"
+      isCompleted ? "bg-brandOrange text-white" : "bg-gray-50"
     }`}
   >
     {icon}
@@ -38,7 +38,7 @@ const Step = ({ step, isCompleted, isLastStep }: StepProps) => (
       <StepIcon icon={step.icon} isCompleted={isCompleted} />
       <span
         className={`${
-          isCompleted ? "text-secondaryGreen font-semibold" : "text-gray-400"
+          isCompleted ? "text-brandOrange font-semibold" : "text-gray-500"
         } text-center text-xs sm:text-sm whitespace-nowrap`}
       >
         {step.label}
@@ -60,7 +60,7 @@ export default function OrderStatus({ currentStep }: OrderStatusProps) {
   ];
 
   return (
-    <div className="bg-lightYellow p-4 sm:p-6 rounded-lg">
+    <div className="bg-brandLightOrange p-4 sm:p-6 rounded-lg">
       <div className="text-lg md:text-xl font-semibold">Submit Order</div>
       <div className="text-sm text-gray-500 mt-2">Order date:</div>
       <div className="border-y border-gray-300 my-5"></div>
